@@ -41,7 +41,6 @@ export const startAgent = async () => {
   const toolNode = new ToolNode(tools);
   const callModel = async ({ messages }) => {
     const response = await modelWithTools.invoke(messages);
-    console.log(response);
     return { messages: [response] };
   };
 
@@ -73,7 +72,8 @@ export const startAgent = async () => {
        For any sustainability standard, we need to have the standard, standard version, disclosure requirements and metrics maintained in the system.
        You are given a new sustainability standard, and you need to perform follwing tasks.
        1. Create a Reporting Standard with ID and name.
-       2. Create the reporting standard version.`
+       2. Create the reporting standard version.
+       3. Gather disclosure requirements and metrics for the standard.`
     ),
     new HumanMessage("BRSR - Business Responsibility and Sustainability Reporting"),
   ];
